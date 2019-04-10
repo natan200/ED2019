@@ -1,0 +1,55 @@
+#include<stdio.h>
+    
+void show(int v[], int tam){
+
+	printf("[");
+int i;
+	for(i = 0; i < tam; i++){
+		printf("%d", v[i]);
+		if(i < tam - 1){
+			printf(" ");
+		}
+	}
+	printf("] ");
+	
+}
+
+void insertion_sort(int v[], int tam) {
+
+    int aux = 0;
+int i;
+    for(i = 1; i < tam; i++) {
+        
+        int j = i;
+        
+        while ( j > 0 && v[j-1] > v[j]) {
+            
+            aux = v[j];
+            v[j] = v[j-1];
+            v[j-1] = aux;
+
+            j--;
+        }
+      }
+}
+
+
+    
+    int main(){
+    	
+    int tam;
+	scanf("%d", &tam);
+	int v[tam];
+	int i;
+	for(i=0;i<tam;i++){
+		scanf("%d", &v[i]);
+	}   	
+	
+	
+	insertion_sort(v, tam);
+	show(v, tam);
+	
+    	
+    	
+    	
+	}
