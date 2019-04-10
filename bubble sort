@@ -1,0 +1,52 @@
+#include<stdio.h>
+    
+void show(int v[], int tam){
+
+	printf("[");
+int i;
+	for(i = 0; i < tam; i++){
+		printf("%d", v[i]);
+		if(i < tam - 1){
+			printf(" ");
+		}
+	}
+	printf("] ");
+	
+}
+
+	void bubble_sort(int v[], int tam){
+	
+	int aux = 0;
+int i, j;
+	for(i = 0; i < tam - 1; i++){
+		for(j = 0; j < tam - 1; j++){
+			if(v[j] > v[j+1]){
+				aux = v[j];
+				v[j] = v[j+1];
+				v[j+1] = aux;
+			}
+		}
+	}
+
+}
+
+
+    
+    int main(){
+    	
+    int tam;
+	scanf("%d", &tam);
+	int v[tam];
+	int i;
+	for(i=0;i<tam;i++){
+		scanf("%d", &v[i]);
+	}   	
+	
+	
+	bubble_sort(v, tam);
+	show(v, tam);
+	
+    	
+    	
+    	
+	}
